@@ -3,7 +3,7 @@
 
 ### 1. Remove existing ids in the collections
 #### The action is performed using the following console command
-``` json
+``` javascript
 db.artists.updateMany({},{$unset:{"id":""}});
 
 db.tracks.updateMany({},{$unset:{"id":""}});
@@ -19,10 +19,10 @@ db.tracks.updateMany({},{$unset:{"id_artists":""}});
 #### The action is performed using the following console command
 ``` json
 //Count in tracks:  
-[{$count: "tracks"}] 
+[{"$count": "tracks"}] 
 
 //Count in artists:
-[{$count: "artists"}]
+[{"$count": "artists"}]
 ```
 
 ### - Shortest and longest track recorded. First track without ordering (Working from tracks). 
