@@ -17,11 +17,12 @@ db.tracks.updateMany({},{$unset:{"id_artists":""}});
 # Queries and Data Analysis
 ### - Define the number of documents in each collection. 
 #### The action is performed using the following console command
-``` json
-// "count" in tracks:  
-[{"$count": "tracks"}] 
-
-// "count" in artists:
+count in tracks:
+``` json 
+[{"$count": "tracks"}]
+```
+count in artists:
+``` json 
 [{"$count": "artists"}]
 ```
 
@@ -96,8 +97,8 @@ db.tracks.updateMany({},{$unset:{"id_artists":""}});
 ] 
 ```
 ### - Find songs from a spec"if"ic year, in this case, the year 2000 (Working from tracks collection).
+The previous pipeline was used, adding a filter to obtain a spec"if"ic year. A collection with the data can also be created and searched.
 ```json
-// The previous pipeline was used, adding a filter to obtain a spec"if"ic year. A collection with the data can also be created and searched.
 [
   {
     "$set": {
@@ -301,9 +302,8 @@ db.tracks.updateMany({},{$unset:{"id_artists":""}});
 ]
 ```
 ### - Songs can have d"if"ferent durations, so it would be interesting to class"if"y them and see how they are distributed (Working from tracks collection). 
-
-```json
-// The $push operator is used since there might be multiple songs with the same name but d"if"ferent artists. 
+The $push operator is used since there might be multiple songs with the same name but d"if"ferent artists.
+```json 
 [ 
   { 
     "$bucket": { 
